@@ -1,0 +1,69 @@
+BASE TOOL and Structure of the System
+
+How to Make It Simple
+1. Start Small
+Begin with just one feature, like adding FD details. Once you have that working, move on to displaying them, and then reminders. You don’t need to do everything at once.
+
+Example:
+
+Step 1: Create a database and set up the Add FD functionality.
+Step 2: Display the FDs in a simple table using Tkinter.
+Step 3: Add reminder functionality.
+2. Work on One Window at a Time
+Tkinter lets you design each part of the app in separate windows or sections.
+
+Main Window: The hub with buttons like "Add FD" and "View FDs."
+Add FD Window: A form to enter details.
+View FDs Window: A table to display data.
+Reminder Check: A simple popup or message.
+3. Use Built-in Libraries
+You don’t need fancy tools or complex libraries—Tkinter and SQLite are enough for a basic app. For example:
+
+Database: SQLite is super easy to use. It’s just a file, no server required.
+GUI: Tkinter is included with Python, so no installation is needed.
+How to Approach Learning
+Basic Tkinter Layout
+Learn how to create buttons, labels, and input fields with Tkinter. Example:
+
+python
+Copy code
+import tkinter as tk
+
+root = tk.Tk()
+tk.Label(root, text="Hello, Tkinter!").pack()
+tk.Button(root, text="Click Me", command=root.quit).pack()
+root.mainloop()
+Connect Tkinter to a Database
+Example of saving form data to SQLite:
+
+python
+Copy code
+import sqlite3
+import tkinter as tk
+
+def save_data():
+    conn = sqlite3.connect("example.db")
+    cursor = conn.cursor()
+    cursor.execute("CREATE TABLE IF NOT EXISTS Data (name TEXT)")
+    cursor.execute("INSERT INTO Data (name) VALUES (?)", (entry.get(),))
+    conn.commit()
+    conn.close()
+    print("Data saved!")
+
+root = tk.Tk()
+entry = tk.Entry(root)
+entry.pack()
+tk.Button(root, text="Save", command=save_data).pack()
+root.mainloop()
+Add Advanced Features Gradually
+Once the basics are done, add features like reminders and edit options.
+
+Why It’s Not Hard
+You Already Know Python
+Since you’ve worked on Python projects before (like the water reminder), this is just a level up.
+
+Resources Are Readily Available
+You can easily find guides and examples for Tkinter and SQLite.
+
+You Can Always Ask for Help
+If you get stuck, we can troubleshoot specific parts together.
