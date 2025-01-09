@@ -1,2 +1,2 @@
-# Fixed-Deposit-Management-System
-Fixed Deposit Management System Based on Python, Tkinter, SQL Lite With Active Deposit Maturity E- Mail Alerts.
+Fixed Deposit Management System
+A Python-based desktop application built using Tkinter to manage fixed deposit records. The system integrates SQLite for efficient database management, allowing users to add, edit, view, and delete fixed deposit records. Additionally, the app sends automated email reminders for upcoming deposit maturity dates using Python's smtplib library, ensuring users stay informed.
